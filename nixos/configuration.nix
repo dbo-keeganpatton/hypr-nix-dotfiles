@@ -13,8 +13,9 @@
 	boot.loader.efi.canTouchEfiVariables 	= true;
 
 	# Networking (Use nmcli)
-	networking.hostName = "eyelady"; 
+	networking.hostName 			= "eyelady"; 
 	networking.networkmanager.enable 	= true;
+	networking.firewall.enable 		= true;
 
 	# System Time Zone.
 	time.timeZone 				= "America/Chicago";
