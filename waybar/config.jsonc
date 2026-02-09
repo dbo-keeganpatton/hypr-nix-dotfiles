@@ -1,0 +1,127 @@
+// -*- mode: jsonc -*-
+{
+     "layer": "top",
+    //"position": "bottom",
+	"mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "reload_style_on_change": false, // make it off when not styling so you save disk being on always for the style.css
+    //"width": 1280,
+    "height": 24,
+    "margin-left": 8,
+    "margin-right": 8,
+    "margin-top": 6,
+    "margin-bottom": 0,
+    "spacing": 0, // Gaps between modules
+
+    "modules-left": [
+        "hyprland/workspaces",
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "memory",
+        "cpu",
+        "backlight",
+        "backlight/slider",
+        "pulseaudio",
+        "pulseaudio/slider",
+        "battery",
+        "tray",
+        "custom/power",
+	],
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": { "format": "{usage}% " },
+    "memory": { "format": "{}% " },
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format-charging": "{capacity}% ",
+        "format-full": " 100%",
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""] 
+    },
+    "network": {
+        "tooltip": true,
+        "format-wifi": "{icon} ",
+        "format-icons": ["󰤟", "󰤢", "󰤥"],
+        "format-ethernet": "󰈀 ", 
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>", 
+        "format-linked": "󰈀 {ifname} (No IP)", 
+        "format-disconnected": " ", 
+        "tooltip-format-disconnected": "Disconnected", 
+        "on-click": "/usr/local/bin/ags -t ControlPanel", 
+        "interval": 2
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "rotate": 0, 
+        "format-muted": "x", 
+        "tooltip-format": "{icon} {desc} {volume}%", 
+        "scroll-step": 5, 
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "", 
+            "car": "", 
+            "default": ["", "", ""]
+        }
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "default": "",
+          "active": "" 
+        },
+        "persistent-workspaces": {
+          "*": [ 1, 2, 3, 4, 5 ]
+        }
+    },
+    "backlight": {
+        "tooltip": false,
+        "device": "intel_backlight",
+        "rotate": 0,
+        "format": " {icon}  ", 
+        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"], 
+        "scroll-step": 1,
+        "min-length": 2
+    },
+    "backlight/slider": {
+        "min": 5,
+        "max": 100,
+        "rotate": 0,
+        "orientation": "vertical",
+        "device": "intel_backlight",
+        "scroll-step": 1
+    },
+    "custom/power": {
+        "format": "⏻ ",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/power.sh"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "rotate": 0,
+        "orientation": "vertical",
+        "device": "pulseaudio",
+        "scroll-step": 1
+    }
+}

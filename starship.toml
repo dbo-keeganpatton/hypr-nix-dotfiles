@@ -1,0 +1,36 @@
+add_newline = true
+command_timeout = 200
+format = "[$directory$git_branch$git_status]($style)$character$python"
+
+[character]
+error_symbol = "[!!](bold #ff5c5c)"
+success_symbol = '[\$](bold #66B2B2)'
+
+[directory]
+style = '#800080'
+truncation_length = 2
+truncation_symbol = "…/"
+repo_root_style = "#66B2B2"
+repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)"
+
+[python]
+format = '[(${virtualenv})]($italic #FF2EFF)'
+
+[git_branch]
+format = " [$branch]($style) "
+style = "italic white"
+
+[git_status]
+format     = '[$all_status]($style)'
+style      = "red"
+ahead      = "⇡${count} "
+diverged   = "⇕⇡${ahead_count}⇣${behind_count} "
+behind     = "⇣${count} "
+conflicted = " "
+up_to_date = " "
+untracked  = "? "
+modified   = " "
+stashed    = ""
+staged     = ""
+renamed    = ""
+deleted    = ""
