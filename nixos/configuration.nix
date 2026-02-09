@@ -69,6 +69,7 @@
 			wf-recorder
 			tree-sitter
 			fastfetch
+			grimblast
 			hyprpaper
 			waypaper
 			luarocks
