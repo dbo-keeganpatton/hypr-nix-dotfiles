@@ -3,34 +3,12 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   opts = {
-    -- enable syntax highlighting
-    highlight = {
-      enable = true,
-    },
-    -- enable indentation
+    highlight = { enable = true },
     indent = { enable = true },
-    -- ensure these language parsers are installed
     ensure_installed = {
-      "json",
-      "javascript",
-      "typescript",
-      "tsx",
-      "yaml",
-      "html",
-      "css",
-      "prisma",
-      "markdown",
-      "markdown_inline",
-      "svelte",
-      "graphql",
-      "bash",
-      "lua",
-      "vim",
-      "dockerfile",
-      "gitignore",
-      "query",
-      "vimdoc",
-      "c",
+      "json", "javascript", "typescript", "tsx", "yaml", "html", "css", 
+      "prisma", "markdown", "markdown_inline", "svelte", "graphql", 
+      "bash", "lua", "vim", "dockerfile", "gitignore", "query", "vimdoc", "c",
     },
     incremental_selection = {
       enable = true,
@@ -43,10 +21,7 @@ return {
     },
   },
   config = function(_, opts)
-    -- This handles the setup for you in the new version
-    require("nvim-treesitter.configs").setup(opts)
-
-    -- use bash parser for zsh files
+    require("nvim-treesitter").setup(opts)
     vim.treesitter.language.register("bash", "zsh")
   end,
 }

@@ -68,11 +68,14 @@
 			wl-clipboard
 			wf-recorder
 			tree-sitter
+			fastfetch
 			hyprpaper
 			waypaper
 			luarocks
 			starship
 			python3
+			gnumake
+			ripgrep
 			neovim
 			waybar
 			lua5_1
@@ -88,6 +91,7 @@
 			gcc
 			fzf
 			git
+			fd
 		];
 
 	# Wayland Variables
