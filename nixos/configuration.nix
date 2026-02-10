@@ -63,7 +63,6 @@
 	environment.systemPackages = with pkgs; [
 			python3Packages.pip
 			python3Packages.pynvim
-			lxqt.lxqt-panel
 			bibata-cursors
 			wl-clipboard
 			wf-recorder
