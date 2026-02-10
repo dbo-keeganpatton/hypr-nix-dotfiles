@@ -1,12 +1,12 @@
-// -*- mode: jsonc -*-
 {
+    // Global Settings
     "layer": "top",
 	  "mod": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "reload_style_on_change": false, // make it off when not styling so you save disk being on always for the style.css
-    "height": 24,
+    "reload_style_on_change": true, 
+    "height": 28,
     "margin-left": 8,
     "margin-right": 8,
     "margin-top": 6,
@@ -14,61 +14,50 @@
     "spacing": 0, 
 
 
-    // Modules
-    "modules-left": [
-        "hyprland/workspaces",
-    ],
-
-    "modules-center": [
-        "clock",
-    ],
-
+    // Module Selection
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
     "modules-right": [
         "network",
         "memory",
         "cpu",
-        "battery",
-        "disk"
+        "battery"
     ],
-    
 
 
-    "disk": {
-        "interval": 30,
-        "path": "/",
-        "format": "{percentage_used}% ",
-        "tooltip-format": "Disk: {used}/{total} ({percentage_used}%)"
-    },
-    
+    // Module Configurations
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%I:%M %p}",
         "format-alt": "{:%Y-%m-%d}"
     },
-    "cpu": { "format": "{usage}% " },
-    "memory": { "format": "{}% " },
-    "battery": {
-        "states": { "warning": 30, "critical": 15 },
-        "format-charging": "{capacity}% ",
-        "format-full": " 100%",
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""] 
-    },
-    
-    
-    "network": {
-      "interface": "wlp2s0",
-      "format": "{ifname}",
-      "format-wifi": "{essid} ({signalStrength}%) ",
-      "format-ethernet": "{ifname} ",
-      "format-disconnected": "",
-      "tooltip-format": "{ifname}",
-      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      "tooltip-format-ethernet": "{ifname} ",
-      "tooltip-format-disconnected": "Disconnected",
-      "max-length": 50
+
+    "cpu": { 
+      "format": "⏣ {usage}%",
+      "interval": 1
     },
 
+    "memory": { 
+      "format": "▦ {used}g", 
+      "interval": 1
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["🔋"] 
+    },
+    
+    "network": {
+      "interface": "wlp1s0",
+      "interval": 1,
+      "format": "{ipaddr}",
+      "format-wifi": "  ({bandwidthTotalBytes})",
+      "format-ethernet": "{ifname} ",
+      "format-disconnected": "!",
+      "max-length": 13,
+      "min-length": 14
+    },
 
     
     "hyprland/workspaces": {
