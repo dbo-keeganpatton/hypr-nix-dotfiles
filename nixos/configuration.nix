@@ -1,12 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-	imports =
-	[ # Include the results of the hardware scan.
+	imports = [ # Include the results of the hardware scan.
 		./hardware-configuration.nix
 	];
 
-# Desktop Environment Setup 
+	# Desktop Environment Setup 
 
 	# Bootloader Configs
 	boot.loader.systemd-boot.enable 	= true;
@@ -49,6 +48,7 @@
 		extraGroups = [ 
 			"networkmanager"
 			"video"
+			"audio"
 			"wheel" 
 			"sudo" 
 		];
@@ -66,8 +66,11 @@
 			bibata-cursors
 			wl-clipboard
 			wf-recorder
+			wireplumber
+			pavucontrol
 			tree-sitter
 			fastfetch
+			playerctl
 			grimblast
 			hyprpaper
 			waypaper
@@ -110,9 +113,13 @@
 	};
 
 	# Sound
+	security.rtkit.enable 		= true;
+	services.pulseaudio.enable	= false;
 	services.pipewire = {
 		enable 			= true;
-		pulse.enable 		= true;
+		pulse.enable		= true;
+		alsa.enable		= true;
+		alsa.support32Bit	= true;
 	};
 
 	# Fonts
