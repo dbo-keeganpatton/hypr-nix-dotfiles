@@ -125,7 +125,7 @@ in
 		GDK_BACKEND             = "wayland";
 
 		# Cursor Configs
-		XCURSOR_THEME           = "NightDiamond-Blue";
+		XCURSOR_THEME           = "NightDiamond-Red";
 		XCURSOR_SIZE            = "32";
 		HYPRCURSOR_SIZE         = "32";
 	};
