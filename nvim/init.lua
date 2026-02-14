@@ -26,5 +26,16 @@ opt.swapfile = false
 --   Plugin Management   --
 ---------------------------
 vim.pack.add({
-  {src = "https://github.com/0xstepit/flow.nvim.git"},
+  { src = "https://github.com/0xstepit/flow.nvim"}
 })
+
+---------------------------
+--   Theme Management    --
+---------------------------
+require("flow").setup({
+  theme = {
+    mode = "dark"
+  }
+})
+
+vim.cmd("colorscheme flow")
