@@ -15,24 +15,24 @@ in
 	# Desktop Environment Setup 
 
 	# Bootloader Configs
-	boot.loader.systemd-boot.enable         = true;
-	boot.loader.efi.canTouchEfiVariables    = true;
+	boot.loader.systemd-boot.enable                 = true;
+	boot.loader.efi.canTouchEfiVariables            = true;
 
 	# Networking (Use nmcli)
-	networking.hostName                     = "eyelady"; 
-	networking.networkmanager.enable        = true;
-	networking.firewall.enable              = true;
+	networking.hostName                             = "eyelady"; 
+	networking.networkmanager.enable                = true;
+	networking.firewall.enable                      = true;
 
 	# System Time Zone.
-	time.timeZone                           = "America/Chicago";
+	time.timeZone                                   = "America/Chicago";
 
 	# Desktop Environment Setup 
 	# services.xserver.enable = true;
 	services.displayManager.sddm = {
 	# Login Screen
-	  enable                                = true;
-	  wayland.enable                        = true; 
-	  theme                                 = "sddm-astronaut-theme";
+	  enable                                        = true;
+	  wayland.enable                                = true; 
+	  theme                                         = "sddm-astronaut-theme";
 	  extraPackages = with pkgs; [
 	        custom-astronaut
 		kdePackages.qtmultimedia
@@ -42,26 +42,33 @@ in
 
 	};
 
-	services.displayManager.defaultSession  = "hyprland";
+	services.displayManager.defaultSession          = "hyprland";
 	programs.hyprland.enable = true;
-	programs.thunar.enable                  = true; 	# File manager
-	services.gvfs.enable                    = true;		# Trash Bin
-	services.tumbler.enable                 = true;		# Thumbnails
+	programs.thunar.enable                          = true; 	# File manager
+	services.gvfs.enable                            = true;		# Trash Bin
+	services.tumbler.enable                         = true;		# Thumbnails
+
+  # This is for auto locking the screen
+  services.logind.settings.Login.HandleLidSwitch  = "suspend"; 
+  programs.hyprlock.enable                        = true;
+  services.hypridle.enable                        = true;
+  services.dbus.enable                            = true;
+  security.polkit.enable                          = true;
 
 
 	# System Basics 
-	services.libinput.enable                = true;		# Touchpad
-	services.printing.enable                = true;		# Printing
-	programs.light.enable                   = true;		# Brightness 
-	services.openssh.enable                 = true;		# SSH Daemon
-	powerManagement.enable                  = true;		# Power Management
+	services.libinput.enable                        = true;		# Touchpad
+	services.printing.enable                        = true;		# Printing
+	programs.light.enable                           = true;		# Brightness 
+	services.openssh.enable                         = true;		# SSH Daemon
+	powerManagement.enable                          = true;		# Power Management
 
 	# Internet Browser
-	programs.firefox.enable                 = true;
+	programs.firefox.enable                         = true;
 
 	# System Users 
 	users.users.keegan = {
-		isNormalUser                          = true;
+		isNormalUser                                  = true;
 		extraGroups = [ 
 			"networkmanager"
 			"video"
@@ -92,6 +99,8 @@ in
 			playerctl
 			grimblast
 			hyprpaper
+      hyprlock
+      hypridle
 			waypaper
 			luarocks
 			starship
