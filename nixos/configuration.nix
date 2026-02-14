@@ -61,7 +61,7 @@ in
 
 	# System Users 
 	users.users.keegan = {
-		isNormalUser                    = true;
+		isNormalUser                          = true;
 		extraGroups = [ 
 			"networkmanager"
 			"video"
@@ -85,6 +85,7 @@ in
 			wl-clipboard
 			wf-recorder
 			wireplumber
+			alsa-utils
 			pavucontrol
 			tree-sitter
 			fastfetch
@@ -117,35 +118,41 @@ in
 
 	# Wayland Variables
 	environment.sessionVariables = {
-		XDG_SESSION_TYPE        = "wayland";
-		XDG_CURRENT_DESKTOP     = "Hyprland";
-		MOZ_ENABLE_WAYLAND      = "1";
-		QT_QPA_PLATFORM         = "wayland";
-		SDL_VIDEODRIVER         = "wayland";
-		GDK_BACKEND             = "wayland";
+		XDG_SESSION_TYPE                    = "wayland";
+		XDG_CURRENT_DESKTOP                 = "Hyprland";
+		MOZ_ENABLE_WAYLAND                  = "1";
+		QT_QPA_PLATFORM                     = "wayland";
+		SDL_VIDEODRIVER                     = "wayland";
+		GDK_BACKEND                         = "wayland";
 
 		# Cursor Configs
-		XCURSOR_THEME           = "NightDiamond-Red";
-		XCURSOR_SIZE            = "32";
-		HYPRCURSOR_SIZE         = "32";
+		XCURSOR_THEME                       = "NightDiamond-Red";
+		XCURSOR_SIZE                        = "32";
+		HYPRCURSOR_SIZE                     = "32";
 	};
 
-	# Sound
-	security.rtkit.enable           = true;
-	services.pulseaudio.enable      = false;
-	services.pipewire = {
-		enable                  = true;
-		pulse.enable            = true;
-		alsa.enable             = true;
-		alsa.support32Bit       = true;
+        # Sound
+        security.rtkit.enable           = true;
+        services.pulseaudio.enable      = false;
+        services.pipewire = {
+                enable                  = true;
+                alsa.enable             = true;
+                alsa.support32Bit       = true;
+                pulse.enable            = true;
+                wireplumber.enable      = true; 
+        };
+        xdg.portal = {
+                enable                  = true;
+		            extraPortals            = [pkgs.xdg-desktop-portal-gtk];
 	};
+
 
 	# Fonts
-	fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+	fonts.packages                        = [ pkgs.nerd-fonts.jetbrains-mono ];
 
 	# Nix Specific
-	nixpkgs.config.allowUnfree      = true;
-	system.stateVersion             = "25.11";
+	nixpkgs.config.allowUnfree            = true;
+	system.stateVersion                   = "25.11";
 
 }
 
