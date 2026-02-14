@@ -1,10 +1,16 @@
 { config, lib, pkgs, ... }:
 
-# Animated SDDM login
+# Custom Vars
 let
+
   custom-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "hyprland_kath";
   };
+
+  neovim-nightly-overlay = import (builtins.fetchTarball {
+    url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+  });
+
 in
 
 {
@@ -158,6 +164,14 @@ in
 
 	# Nix Specific
 	nixpkgs.config.allowUnfree            = true;
+
+  # Neovim Nightly Conig
+  nixpkgs.overlays                      = [ neovim-nightly-overlay ];
+  programs.neovim = {
+    enable                              = true;
+    package                             = pkgs.neovim;
+  };
+
 	system.stateVersion                   = "25.11";
 
 }

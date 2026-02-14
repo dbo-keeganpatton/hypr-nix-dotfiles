@@ -1,0 +1,8 @@
+{
+  "plugins": {
+    "flow.nvim": {
+      "rev": "095c54bbaf55473418dd09d61d3167891684cf85",
+      "src": "https://github.com/0xstepit/flow.nvim.git"
+    }
+  }
+}
