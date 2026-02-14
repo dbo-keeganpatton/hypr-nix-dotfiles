@@ -12,8 +12,6 @@ in
 		./hardware-configuration.nix
 	];
 
-	# Desktop Environment Setup 
-
 	# Bootloader Configs
 	boot.loader.systemd-boot.enable                 = true;
 	boot.loader.efi.canTouchEfiVariables            = true;
@@ -27,7 +25,6 @@ in
 	time.timeZone                                   = "America/Chicago";
 
 	# Desktop Environment Setup 
-	# services.xserver.enable = true;
 	services.displayManager.sddm = {
 	# Login Screen
 	  enable                                        = true;
@@ -43,7 +40,7 @@ in
 	};
 
 	services.displayManager.defaultSession          = "hyprland";
-	programs.hyprland.enable = true;
+	programs.hyprland.enable                        = true;
 	programs.thunar.enable                          = true; 	# File manager
 	services.gvfs.enable                            = true;		# Trash Bin
 	services.tumbler.enable                         = true;		# Thumbnails
