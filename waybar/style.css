@@ -1,4 +1,8 @@
 /* Total Background Styles - Intentionally Hidden */
+* {
+  color : white;
+}
+
 window#waybar {
   background: rgba(0, 0, 0, 0.0);
 }
