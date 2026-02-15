@@ -67,6 +67,7 @@ vim.pack.add({
 
   -->> LSP Configs Plugins
   {src = "https://github.com/nvim-treesitter/nvim-treesitter.git"},
+  {src = "https://github.com/mason-org/mason.nvim.git"},
 
 
 })
@@ -113,3 +114,8 @@ require("neoscroll").setup({
   stop_eof = true,
   easing = "linear"
 })
+
+
+-- B.5  LSP  
+---------------------------
+require("mason").setup()

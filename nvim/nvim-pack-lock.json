@@ -4,6 +4,10 @@
       "rev": "095c54bbaf55473418dd09d61d3167891684cf85",
       "src": "https://github.com/0xstepit/flow.nvim.git"
     },
+    "mason.nvim": {
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
+      "src": "https://github.com/mason-org/mason.nvim.git"
+    },
     "neoscroll.nvim": {
       "rev": "c8d29979cb0cb3a2437a8e0ae683fd82f340d3b8",
       "src": "https://github.com/karb94/neoscroll.nvim.git"
