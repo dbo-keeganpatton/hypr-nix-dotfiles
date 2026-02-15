@@ -4,6 +4,10 @@
       "rev": "095c54bbaf55473418dd09d61d3167891684cf85",
       "src": "https://github.com/0xstepit/flow.nvim.git"
     },
+    "neoscroll.nvim": {
+      "rev": "c8d29979cb0cb3a2437a8e0ae683fd82f340d3b8",
+      "src": "https://github.com/karb94/neoscroll.nvim.git"
+    },
     "nvim-tree.lua": {
       "rev": "1df1960d0e3a26643a4100f64fa03b991b9f4b85",
       "src": "https://github.com/nvim-tree/nvim-tree.lua.git"
@@ -19,6 +23,10 @@
     "telescope.nvim": {
       "rev": "ad7d9580338354ccc136e5b8f0aa4f880434dcdc",
       "src": "https://github.com/nvim-telescope/telescope.nvim.git"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim.git"
     }
   }
 }
