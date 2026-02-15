@@ -1,6 +1,6 @@
----------------------------
--- A)  Basic Configs     --
----------------------------
+---------------------------------------------------------------------------------
+-- [Section A]                   Basic Configs                                 --
+---------------------------------------------------------------------------------
 
 -- A.1 Core Configs 
 ---------------------------
@@ -41,9 +41,9 @@ keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find todos
 
 
 
----------------------------
--- B)      Plugins       --
----------------------------
+---------------------------------------------------------------------------------
+-- [Section B]                      Plugins                                    --
+---------------------------------------------------------------------------------
 
 --- B.1  Plugin Source
 ---------------------------
@@ -68,8 +68,6 @@ vim.pack.add({
   -->> LSP Configs Plugins
   {src = "https://github.com/nvim-treesitter/nvim-treesitter.git"},
   {src = "https://github.com/mason-org/mason.nvim.git"},
-
-
 })
 
 
@@ -119,3 +117,12 @@ require("neoscroll").setup({
 -- B.5  LSP  
 ---------------------------
 require("mason").setup()
+vim.lsp.enable({
+  "tailwindcss-language-server",
+  "typescript-language-server",
+  "lua-language-server",
+  "eslint-lsp",
+  "html-lsp",
+  "pyright",
+  "css-lsp"
+})
