@@ -65,6 +65,10 @@ vim.pack.add({
   -->> Neoscroll Buffer Scrolling Animation
   {src = "https://github.com/karb94/neoscroll.nvim.git"},
 
+  -->> LSP Configs Plugins
+  {src = "https://github.com/nvim-treesitter/nvim-treesitter.git"},
+
+
 })
 
 

@@ -12,6 +12,10 @@
       "rev": "1df1960d0e3a26643a4100f64fa03b991b9f4b85",
       "src": "https://github.com/nvim-tree/nvim-tree.lua.git"
     },
+    "nvim-treesitter": {
+      "rev": "4d9466677a5ceadef104eaa0fe08d60d91c4e9a7",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter.git"
+    },
     "nvim-web-devicons": {
       "rev": "746ffbb17975ebd6c40142362eee1b0249969c5c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons.git"
