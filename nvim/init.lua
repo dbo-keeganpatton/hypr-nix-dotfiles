@@ -115,7 +115,6 @@ require("neoscroll").setup({
 -- B.5  LSP  
 ---------------------------
 require("mason").setup()
-
 vim.lsp.enable({
   "tailwindcss-language-server",
   "typescript-language-server",
@@ -125,4 +124,19 @@ vim.lsp.enable({
   "pyright",
   "css-lsp"
 })
+
+require("blink.cmp").setup({
+  signature = {enabled = true},
+  completion = {
+    documentation = {auto_show = true, auto_show_delay_ms=500},
+    menu = {
+      auto_show = true,
+      draw = {
+        treesitter = {"lsp"},
+        columns = {{"kind_icon", "label", "label_description", gap=1}, {"kind"}},
+      },
+    },
+  },
+})
+
 
