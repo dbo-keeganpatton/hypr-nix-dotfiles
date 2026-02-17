@@ -68,6 +68,8 @@ vim.pack.add({
   -->> LSP Configs Plugins
   {src = "https://github.com/nvim-treesitter/nvim-treesitter.git"},
   {src = "https://github.com/mason-org/mason.nvim.git"},
+  {src = "https://github.com/neovim/nvim-lspconfig"},
+  {src = "https://github.com/saghen/blink.cmp.git"},
 })
 
 
@@ -79,22 +81,18 @@ require("nvim-tree").setup()
 -- B.3  Colorscheme
 ---------------------------
 require("flow").setup({
-
   theme = {
     mode = "dark",
     contrast = "high",
     transparent = true
   },
-
   colors = {
     mode = "light",
     fluo = "green"
   },
-
   ui = {
     borders = "fluo"
   }
-
 })
 vim.cmd("colorscheme flow")
 
@@ -117,6 +115,7 @@ require("neoscroll").setup({
 -- B.5  LSP  
 ---------------------------
 require("mason").setup()
+
 vim.lsp.enable({
   "tailwindcss-language-server",
   "typescript-language-server",
@@ -126,3 +125,4 @@ vim.lsp.enable({
   "pyright",
   "css-lsp"
 })
+

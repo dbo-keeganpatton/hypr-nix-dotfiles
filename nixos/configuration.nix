@@ -108,6 +108,7 @@ in
 			luarocks
 			starship
 			python3
+      zathura
 			gnumake
 			ripgrep
 			neovim

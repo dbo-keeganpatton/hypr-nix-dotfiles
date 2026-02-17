@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "cd79f572971c58784ca72551af29af3a63da9168",
+      "src": "https://github.com/saghen/blink.cmp.git"
+    },
     "flow.nvim": {
       "rev": "095c54bbaf55473418dd09d61d3167891684cf85",
       "src": "https://github.com/0xstepit/flow.nvim.git"
@@ -11,6 +15,14 @@
     "neoscroll.nvim": {
       "rev": "c8d29979cb0cb3a2437a8e0ae683fd82f340d3b8",
       "src": "https://github.com/karb94/neoscroll.nvim.git"
+    },
+    "nvim-cmp": {
+      "rev": "da88697d7f45d16852c6b2769dc52387d1ddc45f",
+      "src": "https://github.com/hrsh7th/nvim-cmp.git"
+    },
+    "nvim-lspconfig": {
+      "rev": "44acfe887d4056f704ccc4f17513ed41c9e2b2e6",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree.lua": {
       "rev": "1df1960d0e3a26643a4100f64fa03b991b9f4b85",

@@ -1,4 +1,4 @@
-# Cozy Neovim Yes I love you
+# Cozy Neovim 
 
 Current Neovim build using [Neovim-Nightly-Overlay](https://github.com/nix-community/neovim-nightly-overlay) to enable Nightly build version 0.12 for Nix builds.
 
