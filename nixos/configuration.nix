@@ -117,6 +117,8 @@ in
 			nodejs
 			slurp
 			unzip
+      rustc
+      cargo
 			foot
 			wofi
 			btop

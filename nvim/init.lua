@@ -115,6 +115,10 @@ require("neoscroll").setup({
 -- B.5  LSP  
 ---------------------------
 require("mason").setup()
+
+vim.lsp.config("*", {
+  capabilities = require("blink.cmp").get_lsp_capabilities()
+})
 vim.lsp.enable({
   "tailwindcss-language-server",
   "typescript-language-server",
@@ -126,6 +130,11 @@ vim.lsp.enable({
 })
 
 require("blink.cmp").setup({
+  fuzzy = {
+    prebuilt_binaries = {
+      download = true,
+    },
+  },
   signature = {enabled = true},
   completion = {
     documentation = {auto_show = true, auto_show_delay_ms=500},
@@ -138,5 +147,4 @@ require("blink.cmp").setup({
     },
   },
 })
-
 
