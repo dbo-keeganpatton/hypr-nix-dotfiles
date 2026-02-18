@@ -88,10 +88,10 @@ in
 	# System Packages
 	# https://search.nixos.org/ 
 	environment.systemPackages = with pkgs; [
-			python3Packages.pip
 			python3Packages.pynvim
-			nightdiamond-cursors
+			python3Packages.pip
 			custom-astronaut
+      phinger-cursors
 			wl-clipboard
 			wf-recorder
 			wireplumber
@@ -141,7 +141,7 @@ in
 		GDK_BACKEND                         = "wayland";
 
 		# Cursor Configs
-		XCURSOR_THEME                       = "NightDiamond-Red";
+		XCURSOR_THEME                       = "phinger-cursors-light";
 		XCURSOR_SIZE                        = "32";
 		HYPRCURSOR_SIZE                     = "32";
 	};
