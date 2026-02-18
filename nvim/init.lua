@@ -69,7 +69,10 @@ vim.pack.add({
   {src = "https://github.com/nvim-treesitter/nvim-treesitter.git"},
   {src = "https://github.com/mason-org/mason.nvim.git"},
   {src = "https://github.com/neovim/nvim-lspconfig"},
-  {src = "https://github.com/saghen/blink.cmp.git"},
+  {src = "https://github.com/hrsh7th/nvim-cmp.git"},
+  {src = "https://github.com/hrsh7th/cmp-nvim-lsp.git"},
+  {src = "https://github.com/hrsh7th/cmp-buffer.git"},
+  {src = "https://github.com/hrsh7th/cmp-path.git"},
 })
 
 
@@ -116,9 +119,7 @@ require("neoscroll").setup({
 ---------------------------
 require("mason").setup()
 
-vim.lsp.config("*", {
-  capabilities = require("blink.cmp").get_lsp_capabilities()
-})
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.enable({
   "tailwindcss-language-server",
   "typescript-language-server",
@@ -127,24 +128,38 @@ vim.lsp.enable({
   "html-lsp",
   "pyright",
   "css-lsp"
-})
+}, {capabilities = capabilities})
 
-require("blink.cmp").setup({
-  fuzzy = {
-    prebuilt_binaries = {
-      download = true,
-    },
-  },
-  signature = {enabled = true},
-  completion = {
-    documentation = {auto_show = true, auto_show_delay_ms=500},
-    menu = {
-      auto_show = true,
-      draw = {
-        treesitter = {"lsp"},
-        columns = {{"kind_icon", "label", "label_description", gap=1}, {"kind"}},
-      },
-    },
-  },
-})
+--> Auto Completions and dropdown
+--> documentation
+local cmp = require("cmp")
+cmp.setup({
 
+  snippet = {
+    expand = function(args)
+      vim.snippet.expand(args.body)
+    end,
+  },
+
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+
+  --> Auto Complete Menu Navigation Binds
+  mapping = cmp.mapping.preset.insert({
+    ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-j>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }), 
+    ["<Tab>"] = cmp.mapping.select_next_item(),
+    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+  }),
+
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" }, 
+    { name = "path" },
+  }, {{ name = "buffer" },}),
+
+})
