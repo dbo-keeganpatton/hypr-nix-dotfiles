@@ -2,6 +2,7 @@
 -- [Section A]                   Basic Configs                                 --
 ---------------------------------------------------------------------------------
 
+
 -- A.1 Core Configs 
 ---------------------------
 vim.cmd("let g:netrw_liststyle = 3")
@@ -27,6 +28,7 @@ opt.splitright                              = true
 opt.splitbelow                              = true 
 opt.swapfile                                = false
 
+
 -- A.2 Key Binds 
 ---------------------------
 vim.g.mapleader = " "
@@ -38,12 +40,17 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find str
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find todos" })
+keymap.set("n", "<leader>xw", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+keymap.set("n", "<leader>xd", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+keymap.set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix (Trouble)" })
+keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", { desc = "Todo (Trouble)" })
 
 
 
 ---------------------------------------------------------------------------------
 -- [Section B]                      Plugins                                    --
 ---------------------------------------------------------------------------------
+
 
 --- B.1  Plugin Source
 ---------------------------
@@ -79,6 +86,7 @@ vim.pack.add({
   {src = "https://github.com/windwp/nvim-autopairs.git"},
 
   -->> Debugging
+  {src = "https://github.com/folke/trouble.nvim.git"},
 })
 
 
@@ -155,13 +163,13 @@ cmp.setup({
 
   --> Auto Complete Menu Navigation Binds
   mapping = cmp.mapping.preset.insert({
-    ["<C-k>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-j>"] = cmp.mapping.scroll_docs(4),
+    ["<Tab>"] = cmp.mapping.scroll_docs(-4),
+    ["<S-Tab>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping.confirm({ select = true }), 
-    ["<Tab>"] = cmp.mapping.select_next_item(),
-    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
   }),
 
   sources = cmp.config.sources({
@@ -176,3 +184,9 @@ cmp.setup({
 ---------------------------
 require("nvim-autopairs").setup{}
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+
+-- B.7  Debugging
+---------------------------
+require("trouble").setup{}
+
