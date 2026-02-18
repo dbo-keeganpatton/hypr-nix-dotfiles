@@ -7,12 +7,13 @@ Current Neovim build using [Neovim-Nightly-Overlay](https://github.com/nix-commu
 - [x] Mason
 - [x] Neoscroll
 - [x] Nvim-tree
+- [x] LSP
 - Markdown Renderer
 - Trouble.nvim
 - AutoPair
 - Formatting
 - MultiCursor
-- Nvim-Cmp
+- [x] Nvim-Cmp
 - Surround
 - Lualine
 - nvim-ts-autotag

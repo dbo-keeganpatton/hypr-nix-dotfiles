@@ -68,11 +68,17 @@ vim.pack.add({
   -->> LSP Configs Plugins
   {src = "https://github.com/nvim-treesitter/nvim-treesitter.git"},
   {src = "https://github.com/mason-org/mason.nvim.git"},
+  {src = "https://github.com/mason-org/mason-lspconfig.nvim.git"},
   {src = "https://github.com/neovim/nvim-lspconfig"},
   {src = "https://github.com/hrsh7th/nvim-cmp.git"},
   {src = "https://github.com/hrsh7th/cmp-nvim-lsp.git"},
   {src = "https://github.com/hrsh7th/cmp-buffer.git"},
   {src = "https://github.com/hrsh7th/cmp-path.git"},
+
+  -->> Quality of Life
+  {src = "https://github.com/windwp/nvim-autopairs.git"},
+
+  -->> Debugging
 })
 
 
@@ -121,13 +127,14 @@ require("mason").setup()
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.enable({
-  "tailwindcss-language-server",
-  "typescript-language-server",
+  "tailwindcss",
+  "ts_ls",
   "lua-language-server",
+  "vim-language-server",
   "eslint-lsp",
-  "html-lsp",
+  "html",
   "pyright",
-  "css-lsp"
+  "cssls"
 }, {capabilities = capabilities})
 
 --> Auto Completions and dropdown
@@ -163,3 +170,9 @@ cmp.setup({
   }, {{ name = "buffer" },}),
 
 })
+
+
+-- B.6  Formatting  
+---------------------------
+require("nvim-autopairs").setup{}
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
