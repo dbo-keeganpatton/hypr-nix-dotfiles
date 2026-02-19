@@ -13,7 +13,7 @@ Current Neovim build using [Neovim-Nightly-Overlay](https://github.com/nix-commu
 - [x] AutoPair
 - [x] Nvim-Cmp
 - [x] MultiCursor
-- Markdown Renderer
+- [x] Markdown Renderer
 - Formatting
 - Surround
 - Lualine

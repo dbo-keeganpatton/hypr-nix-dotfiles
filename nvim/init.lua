@@ -2,7 +2,6 @@
 -- [Section A]                   Basic Configs                                 --
 ---------------------------------------------------------------------------------
 
-
 -- A.1 Core Configs 
 ---------------------------
 vim.cmd("let g:netrw_liststyle = 3")
@@ -70,7 +69,6 @@ keymap.set(
 -- [Section B]                      Plugins                                    --
 ---------------------------------------------------------------------------------
 
-
 --- B.1  Plugin Source
 ---------------------------
 vim.pack.add({
@@ -104,6 +102,7 @@ vim.pack.add({
   -->> Quality of Life
   {src = "https://github.com/windwp/nvim-autopairs.git"},
   {src = "https://github.com/jake-stewart/multicursor.nvim.git"},
+  {src = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git"},
 
   -->> Debugging
   {src = "https://github.com/folke/trouble.nvim.git"},
@@ -214,3 +213,4 @@ require("trouble").setup{}
 -- B.8  Quality of Life 
 ---------------------------
 require("multicursor-nvim").setup{}
+require("render-markdown").setup{}
