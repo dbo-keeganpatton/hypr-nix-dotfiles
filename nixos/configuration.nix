@@ -88,47 +88,47 @@ in
 	# System Packages
 	# https://search.nixos.org/ 
 	environment.systemPackages = with pkgs; [
-			python3Packages.pynvim
-			python3Packages.pip
-			custom-astronaut
-      phinger-cursors
-			wl-clipboard
-			wf-recorder
-			wireplumber
-			alsa-utils
-			pavucontrol
-			tree-sitter
-			fastfetch
-			playerctl
-			grimblast
-			hyprpaper
-      hyprlock
-      hypridle
-			waypaper
-			luarocks
-			starship
-			python3
-      zathura
-			gnumake
-			ripgrep
-			neovim
-			waybar
-			lua5_1
-			nodejs
-			slurp
-			unzip
-      rustc
-      cargo
-			foot
-			wofi
-			btop
-			grim
-			tmux
-			wget
-			gcc
-			fzf
-			git
-			fd
+			python3Packages.pynvim        # Neovim Python Client 
+			python3Packages.pip           # Python Package Manager
+			custom-astronaut              # SDDM Login Screen
+      phinger-cursors               # Custom Cursor
+			wl-clipboard                  # Wayland Copy/Paste Utility
+			wf-recorder                   # Screen Recording Utility
+			wireplumber                   # Audio Utility
+			alsa-utils                    # Audio Utility
+			pavucontrol                   # Audio Control GUI
+			tree-sitter                   # Syntax Parser for Editor
+			fastfetch                     # System Info Tool
+			playerctl                     # Audio Utility
+			grimblast                     # Screenshots
+			hyprpaper                     # Wallpaper Utility
+      hyprlock                      # Screen Locking
+      hypridle                      # System Idle Daemon 
+			waypaper                      # Wallpaper Manager
+			luarocks                      # Lua Package Manager
+			starship                      # Command Line Prompt Customizer
+			python3                       # Python Runtime
+      zathura                       # Terminal Based PDF Utility
+			gnumake                       # Build Automation for MAKE
+			ripgrep                       # System Search Tool
+			neovim                        # Text Editor
+			waybar                        # Desktop Navbar
+			lua5_1                        # Lua Runtime
+			nodejs                        # Node Package Manager
+			slurp                         # Screenshot helper utility
+			unzip                         # Extraction Utility
+      rustc                         # Rust runtime
+      cargo                         # Rust Package Manager
+			foot                          # Wayland Native Terminal Emulator
+			wofi                          # Menu GUI
+			btop                          # System Process Management
+			grim                          # Screenshot Utility
+			tmux                          # Terminal Multiplexer
+			wget                          # File downloader
+			gcc                           # C Compiler
+			fzf                           # Command Line Fuzzy Finder
+			git                           # Version Control Tool
+			fd                            # Alternative to Find Utility
 		];
 
 	# Wayland Variables
@@ -142,8 +142,8 @@ in
 
 		# Cursor Configs
 		XCURSOR_THEME                       = "phinger-cursors-light";
-		XCURSOR_SIZE                        = "32";
-		HYPRCURSOR_SIZE                     = "32";
+		XCURSOR_SIZE                        = "24";
+		HYPRCURSOR_SIZE                     = "24";
 	};
 
         # Sound
