@@ -1,24 +1,24 @@
 add_newline = true
 command_timeout = 200
-format = "[$directory$git_branch$git_status]($style)($python) $character "
+format = " [$directory$git_branch$git_status]($style)($python) $character "
 
 [character]
-error_symbol = "[!!](bold #ff5c5c)"
-success_symbol = '[\$](bold #66B2B2)'
+error_symbol = "[!!](bold #FF0000)"
+success_symbol = '[\$](bold #4AF626)'
 
 [directory]
-style = '#800080'
+style = '#CFCFCF'
 truncation_length = 2
-truncation_symbol = "…/"
-repo_root_style = "#66B2B2"
+truncation_symbol = "⟡ "
+repo_root_style = "#4AF626"
 repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)"
 
 [python]
-format = '[(${virtualenv})]($italic #FF2EFF)'
+format = '[(${virtualenv})]($italic #808080)'
 
 [git_branch]
-format = " [$branch]($style) "
-style = "italic white"
+format = " \\[$branch\\]($style) "
+style = "italic #6E6E6E"
 
 [git_status]
 format     = '[$all_status]($style)'
