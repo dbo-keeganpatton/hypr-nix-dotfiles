@@ -33,17 +33,36 @@ opt.swapfile                                = false
 ---------------------------
 vim.g.mapleader = " "
 local keymap = vim.keymap
+
 keymap.set("n", "<leader>j", "<cmd>NvimTreeToggle<CR>", {desc = "Toggle NvimTree File Explorer"})
+
+-->> Telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find todos" })
+
+-->> Trouble
 keymap.set("n", "<leader>xw", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
 keymap.set("n", "<leader>xd", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
 keymap.set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix (Trouble)" })
 keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", { desc = "Todo (Trouble)" })
+
+-->> Multicursor
+keymap.set({"n", "x"}, "<up>", function() require("multicursor-nvim").lineAddCursor(-1) end)
+keymap.set({"n", "x"}, "<down>", function() require("multicursor-nvim").lineAddCursor(1) end)
+keymap.set(
+  {"n"},
+  "<esc>",
+  function()
+    if not require("multicursor-nvim").cursorsEnabled() 
+      then require("multicursor-nvim").enableCursors()
+    else require("multicursor-nvim").clearCursors()
+    end
+  end
+)
 
 
 
@@ -84,6 +103,7 @@ vim.pack.add({
 
   -->> Quality of Life
   {src = "https://github.com/windwp/nvim-autopairs.git"},
+  {src = "https://github.com/jake-stewart/multicursor.nvim.git"},
 
   -->> Debugging
   {src = "https://github.com/folke/trouble.nvim.git"},
@@ -190,3 +210,7 @@ local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 ---------------------------
 require("trouble").setup{}
 
+
+-- B.8  Quality of Life 
+---------------------------
+require("multicursor-nvim").setup{}
