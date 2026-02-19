@@ -25,6 +25,11 @@ window#waybar {
   color: #e78284;
 }
 
+#workspaces button:hover {
+    background: none;
+    border: none;
+}
+
 #clock {
   background: rgba(0, 60, 190, 0.4);
   border: 0.5px solid #0000ff;
