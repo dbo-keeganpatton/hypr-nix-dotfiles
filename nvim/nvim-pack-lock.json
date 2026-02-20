@@ -20,6 +20,10 @@
       "rev": "095c54bbaf55473418dd09d61d3167891684cf85",
       "src": "https://github.com/0xstepit/flow.nvim.git"
     },
+    "lualine.nvim": {
+      "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
+      "src": "https://github.com/nvim-lualine/lualine.nvim.git"
+    },
     "mason-lspconfig.nvim": {
       "rev": "21c2a84ce368e99b18f52ab348c4c02c32c02fcf",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim.git"

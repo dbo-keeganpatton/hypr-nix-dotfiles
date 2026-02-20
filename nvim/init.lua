@@ -28,14 +28,24 @@ opt.splitbelow                              = true
 opt.swapfile                                = false
 
 
--- A.2 Key Binds 
+
+---------------------------------------------------------------------------------
+-- [Section B]                   Key Binds                                  --
+---------------------------------------------------------------------------------
+
+-- B.1 Leader and Globals
 ---------------------------
 vim.g.mapleader = " "
 local keymap = vim.keymap
 
+
+-- B.2 NvimTree 
+---------------------------
 keymap.set("n", "<leader>j", "<cmd>NvimTreeToggle<CR>", {desc = "Toggle NvimTree File Explorer"})
 
--->> Telescope
+
+-- B.3 Telescope 
+---------------------------
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
@@ -43,13 +53,17 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find s
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find todos" })
 
--->> Trouble
+
+-- B.4 Trouble 
+---------------------------
 keymap.set("n", "<leader>xw", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
 keymap.set("n", "<leader>xd", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
 keymap.set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix (Trouble)" })
 keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", { desc = "Todo (Trouble)" })
 
--->> Multicursor
+
+-- B.5 Multicursor 
+---------------------------
 keymap.set({"n", "x"}, "<up>", function() require("multicursor-nvim").lineAddCursor(-1) end)
 keymap.set({"n", "x"}, "<down>", function() require("multicursor-nvim").lineAddCursor(1) end)
 keymap.set(
@@ -64,12 +78,11 @@ keymap.set(
 )
 
 
-
 ---------------------------------------------------------------------------------
--- [Section B]                      Plugins                                    --
+-- [Section C]                      Plugins                                    --
 ---------------------------------------------------------------------------------
 
---- B.1  Plugin Source
+-- C.1  Plugin Source
 ---------------------------
 vim.pack.add({
   -->> Colorscheme
@@ -103,18 +116,19 @@ vim.pack.add({
   {src = "https://github.com/windwp/nvim-autopairs.git"},
   {src = "https://github.com/jake-stewart/multicursor.nvim.git"},
   {src = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git"},
+  {src = "https://github.com/nvim-lualine/lualine.nvim.git"},
 
   -->> Debugging
   {src = "https://github.com/folke/trouble.nvim.git"},
 })
 
 
--- B.2  Nvim-Tree
+-- C.2  Nvim-Tree
 ---------------------------
 require("nvim-tree").setup()
 
 
--- B.3  Colorscheme
+-- C.3  Colorscheme
 ---------------------------
 require("flow").setup({
   theme = {
@@ -133,7 +147,7 @@ require("flow").setup({
 vim.cmd("colorscheme flow")
 
 
--- B.4  NeoScroll 
+-- C.4  NeoScroll 
 ---------------------------
 require("neoscroll").setup({
   mappings = {
@@ -148,7 +162,7 @@ require("neoscroll").setup({
 })
 
 
--- B.5  LSP  
+-- C.5  LSP  
 ---------------------------
 require("mason").setup()
 
@@ -199,18 +213,27 @@ cmp.setup({
 })
 
 
--- B.6  Formatting  
+-- C.6  Formatting  
 ---------------------------
 require("nvim-autopairs").setup{}
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 
--- B.7  Debugging
+-- C.7  Debugging
 ---------------------------
 require("trouble").setup{}
 
 
--- B.8  Quality of Life 
+-- C.8  Quality of Life 
 ---------------------------
-require("multicursor-nvim").setup{}
-require("render-markdown").setup{}
+require("multicursor-nvim").setup({})
+require("render-markdown").setup({})
+require("lualine").setup({
+  options = {
+    icons_enabled = false,
+    theme = "16color"
+  }
+})
+
+
+
