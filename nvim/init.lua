@@ -232,7 +232,15 @@ require("lualine").setup({
   options = {
     icons_enabled = false,
     theme = "16color"
-  }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
 })
 
 
