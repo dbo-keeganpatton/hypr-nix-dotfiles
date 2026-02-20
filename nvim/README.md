@@ -16,6 +16,3 @@
 - [x] MultiCursor
 - [x] Markdown Renderer
 - [x] Lualine
-- Formatting
-- Surround
-- nvim-ts-autotag
