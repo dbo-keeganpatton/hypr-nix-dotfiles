@@ -15,7 +15,7 @@
 - [x] Nvim-Cmp
 - [x] MultiCursor
 - [x] Markdown Renderer
+- [x] Lualine
 - Formatting
 - Surround
-- Lualine
 - nvim-ts-autotag
