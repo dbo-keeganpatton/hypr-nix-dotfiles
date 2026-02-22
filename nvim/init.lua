@@ -215,13 +215,14 @@ cmp.setup({
 
 -- C.6  Formatting  
 ---------------------------
-require("nvim-autopairs").setup{}
+require("nvim-autopairs").setup({})
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 
 -- C.7  Debugging
 ---------------------------
-require("trouble").setup{}
+require("trouble").setup({})
+require("todo-comments").setup({})
 
 
 -- C.8  Quality of Life 
@@ -242,6 +243,7 @@ require("lualine").setup({
     lualine_z = {}
   },
 })
+
 
 
 
