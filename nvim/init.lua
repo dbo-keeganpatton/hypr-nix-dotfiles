@@ -117,6 +117,7 @@ vim.pack.add({
   {src = "https://github.com/jake-stewart/multicursor.nvim.git"},
   {src = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git"},
   {src = "https://github.com/nvim-lualine/lualine.nvim.git"},
+  {src = "https://github.com/lewis6991/gitsigns.nvim.git"},
 
   -->> Debugging
   {src = "https://github.com/folke/trouble.nvim.git"},
@@ -223,6 +224,7 @@ local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 ---------------------------
 require("trouble").setup({})
 require("todo-comments").setup({})
+require("gitsigns").setup({})
 
 
 -- C.8  Quality of Life 
