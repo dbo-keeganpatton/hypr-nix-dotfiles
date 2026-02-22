@@ -5,6 +5,11 @@
 ![An Image of this Config](./public/config-example.png)
 
 ## Feature Todo
+- [Flash.nvim](https://github.com/folke/flash.nvim)
+- [Alpha-nvim](https://github.com/goolord/alpha-nvim)
+- [TODO-Nvim](https://github.com/folke/todo-comments.nvim)
+- [Nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
+- [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - [x] Treesitter
 - [x] Mason
 - [x] Neoscroll
