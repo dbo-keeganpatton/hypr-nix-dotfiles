@@ -115,6 +115,7 @@ in
 			waybar                        # Desktop Navbar
 			lua5_1                        # Lua Runtime
 			nodejs                        # Node Package Manager
+      steam                         # Video Games
 			slurp                         # Screenshot helper utility
 			unzip                         # Extraction Utility
       rustc                         # Rust runtime
