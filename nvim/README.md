@@ -8,7 +8,7 @@
 - [Flash.nvim](https://github.com/folke/flash.nvim)
 - [Alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [Nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
-- [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- [x] Gitsigns
 - [x] TODO-Nvim
 - [x] Treesitter
 - [x] Mason
