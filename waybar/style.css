@@ -14,6 +14,8 @@ window#waybar {
   border-radius: 4px;
   padding-left: 2px;
   padding-right: 2px;
+  margin-right: 4px;
+  margin-left: 4px;
 }
 
 #workspaces button label {
@@ -35,6 +37,9 @@ window#waybar {
   border: 1px solid #66b2b2;
   border-radius: 4px;
   padding: 0 10px;
+  margin-right: 4px;
+  margin-left: 4px;
+
 }
 
 #network {
