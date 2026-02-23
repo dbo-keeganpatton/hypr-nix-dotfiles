@@ -4,4 +4,4 @@ Minimal, Lightweight, and Fast.
 
 ## Sample Setup
 
-![sample image](./public/sample.png)
+![sample image](./public/example.png)
