@@ -9,8 +9,8 @@ window#waybar {
 
 /* Section Specific Style */
 #workspaces {
-  background: rgba(0, 60, 190, 0.4);
-  border: 0.5px solid #0000ff;
+  background: rgba(0, 0, 0, 1.0);
+  border: 1px solid #66b2b2;
   border-radius: 4px;
   padding-left: 2px;
   padding-right: 2px;
@@ -22,7 +22,7 @@ window#waybar {
 
 #workspaces button.active label {
   font-size: 24px;
-  color: #e78284;
+  color: #66b2b2;
 }
 
 #workspaces button:hover {
@@ -31,15 +31,15 @@ window#waybar {
 }
 
 #clock {
-  background: rgba(0, 60, 190, 0.4);
-  border: 0.5px solid #0000ff;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #66b2b2;
   border-radius: 4px;
   padding: 0 10px;
 }
 
 #network {
-  background: rgba(0, 60, 190, 0.4);
-  border: 0.5px solid #0000ff;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #66b2b2;
   border-radius: 4px;
   margin-right: 4px;
   margin-left: 4px;
@@ -47,8 +47,8 @@ window#waybar {
 }
 
 #memory {
-  background: rgba(0, 60, 190, 0.4);
-  border: 0.5px solid #0000ff;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #66b2b2;
   border-radius: 4px;
   margin-right: 4px;
   margin-left: 4px;
@@ -56,8 +56,8 @@ window#waybar {
 }
 
 #cpu {
-  background: rgba(0, 60, 190, 0.4);
-  border: 0.5px solid #0000ff;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #66b2b2;
   border-radius: 4px;
   margin-right: 4px;
   margin-left: 4px;
@@ -65,8 +65,8 @@ window#waybar {
 }
 
 #battery {
-  background: rgba(0, 60, 190, 0.4);
-  border: 0.5px solid #0000ff;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #66b2b2;
   border-radius: 4px;
   margin-left: 4px;
   padding: 0 10px;
