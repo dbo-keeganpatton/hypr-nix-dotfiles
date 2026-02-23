@@ -7,7 +7,7 @@
 ## Feature Todo
 - [Flash.nvim](https://github.com/folke/flash.nvim)
 - [Alpha-nvim](https://github.com/goolord/alpha-nvim)
-- [Nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
+- [x] Nvim-ts-autotag
 - [x] Gitsigns
 - [x] TODO-Nvim
 - [x] Treesitter
