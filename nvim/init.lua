@@ -114,6 +114,7 @@ vim.pack.add({
 
   -->> Quality of Life
   {src = "https://github.com/windwp/nvim-autopairs.git"},
+  {src = "https://github.com/windwp/nvim-ts-autotag.git"},
   {src = "https://github.com/jake-stewart/multicursor.nvim.git"},
   {src = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git"},
   {src = "https://github.com/nvim-lualine/lualine.nvim.git"},
@@ -168,6 +169,17 @@ require("neoscroll").setup({
 -- C.5  LSP  
 ---------------------------
 require("mason").setup()
+require("nvim-treesitter").setup({})
+require("nvim-treesitter").install({
+  "lua",
+  "vim",
+  "css",
+  "html",
+  "python",
+  "vimdoc",
+  "javascript",
+  "typescript"
+})
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.enable({
@@ -220,6 +232,7 @@ cmp.setup({
 ---------------------------
 require("nvim-autopairs").setup({})
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+require("nvim-ts-autotag").setup({})
 
 
 -- C.7  Debugging
