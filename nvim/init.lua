@@ -139,10 +139,12 @@ require("flow").setup({
   },
   colors = {
     mode = "light",
-    fluo = "green"
+    fluo = "green",
+    custom = {saturation = "90"},
   },
   ui = {
-    borders = "fluo"
+    borders = "fluo",
+    aggressive_spell = false,
   }
 })
 vim.cmd("colorscheme flow")

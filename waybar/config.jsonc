@@ -15,10 +15,9 @@
 
 
     // Module Selection
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["clock", "hyprland/workspaces"],
     "modules-center": [],
     "modules-right": [
-        "clock",
         "network",
         "memory",
         "cpu",
@@ -46,7 +45,7 @@
     "battery": {
         "states": { "warning": 30, "critical": 15 },
         "format": "{icon} {capacity}%",
-        "format-icons": ["🔋"] 
+        "format-icons": ["⌁"] 
     },
     
     "network": {
