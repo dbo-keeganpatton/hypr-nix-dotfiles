@@ -1,0 +1,55 @@
+window {
+  color: white;
+  background: transparent;
+}
+
+
+#input {
+  background-color: black;
+  border: solid 1px #66b2b2;
+  border-radius: 2px;
+  color: white;
+}
+
+
+#input:focus {
+  border: 1px solid #66b2b2; 
+  outline: none;             
+  box-shadow: none;          
+}
+
+
+#text:selected {
+  color: #66b2b2;
+}
+
+
+#entry {
+  background-color: black;
+  opacity: 0.1;
+}
+
+
+#entry:selected {
+  background-color: black;
+  border: solid 1px #66b2b2;
+  border-radius: 2px;
+  outline: none;
+  opacity: 1.0;
+}
+
+
+scrollbar {
+  /* Hiding the scroll bar because I hate it */
+  width: 0px;
+  min-width: 0px;
+  background: transparent;
+}
+
+scrollbar slider {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  min-width: 0;
+  min-height: 0;
+}
