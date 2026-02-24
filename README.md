@@ -8,7 +8,6 @@ Minimal, Lightweight, and Fast.
 
 
 ## To Do
-- Configure Wofi Styles
 - Configure Thunar Styles
 - Add Bluetooth
 - Fix sound working on reboot
