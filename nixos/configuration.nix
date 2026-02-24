@@ -48,6 +48,7 @@ in
 	services.displayManager.defaultSession          = "hyprland";
 	programs.hyprland.enable                        = true;
 	programs.thunar.enable                          = true; 	# File manager
+  programs.yazi.enable                            = true;
 	services.gvfs.enable                            = true;		# Trash Bin
 	services.tumbler.enable                         = true;		# Thumbnails
 
