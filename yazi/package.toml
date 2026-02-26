@@ -10,3 +10,18 @@ hash = "607d37538d0c8b7485945b00403ed571"
 use = "AdithyanA2005/nord"
 rev = "bdf0bd4"
 hash = "f852b84d6992120b5a7101c1f7b92287"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "8e6296f"
+hash = "f9adc0d1e58cbcfc5f39046383a25d9f"
+
+[[flavor.deps]]
+use = "marcosvnmelo/kanagawa-dragon"
+rev = "b9541e8"
+hash = "f0532bb6432ee584b0c874a3f2fa959f"
+
+[[flavor.deps]]
+use = "kmlupreti/ayu-dark"
+rev = "648a178"
+hash = "1a8af82f6246942bd700316a16c4e14a"
