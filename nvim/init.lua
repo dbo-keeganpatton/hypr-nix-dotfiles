@@ -127,7 +127,9 @@ vim.pack.add({
 
 -- C.2  Nvim-Tree
 ---------------------------
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  view = {relativenumber = true} 
+})
 
 
 -- C.3  Colorscheme
