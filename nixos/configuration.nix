@@ -48,7 +48,6 @@ in
 	services.displayManager.defaultSession          = "hyprland";
 	programs.hyprland.enable                        = true;
 	programs.thunar.enable                          = true; 	# File manager
-  programs.yazi.enable                            = true;
 	services.gvfs.enable                            = true;		# Trash Bin
 	services.tumbler.enable                         = true;		# Thumbnails
 
@@ -124,6 +123,7 @@ in
 			foot                          # Wayland Native Terminal Emulator
 			wofi                          # Menu GUI
 			btop                          # System Process Management
+      yazi                          # Command Line File Manager
 			grim                          # Screenshot Utility
 			tmux                          # Terminal Multiplexer
 			wget                          # File downloader
@@ -176,6 +176,7 @@ in
     enable                              = true;
     package                             = pkgs.neovim;
   };
+
 
 	system.stateVersion                   = "25.11";
 

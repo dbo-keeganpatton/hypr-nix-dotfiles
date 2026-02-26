@@ -1,0 +1,12 @@
+[plugin]
+deps = []
+
+[[flavor.deps]]
+use = "ficd0/ashen:ashen"
+rev = "02662b8"
+hash = "607d37538d0c8b7485945b00403ed571"
+
+[[flavor.deps]]
+use = "AdithyanA2005/nord"
+rev = "bdf0bd4"
+hash = "f852b84d6992120b5a7101c1f7b92287"
