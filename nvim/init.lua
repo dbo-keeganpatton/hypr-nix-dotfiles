@@ -173,6 +173,8 @@ require("neoscroll").setup({
 require("mason").setup()
 require("nvim-treesitter").setup({})
 require("nvim-treesitter").install({
+  "c",
+  "cpp",
   "lua",
   "vim",
   "css",
@@ -187,6 +189,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.enable({
   "tailwindcss",
   "ts_ls",
+  "clangd",
   "lua-language-server",
   "vim-language-server",
   "eslint-lsp",
