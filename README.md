@@ -8,6 +8,4 @@ Minimal, Lightweight, and Fast.
 
 
 ## To Do
-- Configure Thunar Styles
-- Add Bluetooth
 - Fix sound working on reboot
