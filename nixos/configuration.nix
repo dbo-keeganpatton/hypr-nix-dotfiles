@@ -187,12 +187,12 @@ in
       extraConfig."10-fix-ryzen-audio" = {
         "monitor.alsa.rules" = [
           {
-            # 1. Kill the HDMI card
+            # Kill the HDMI card
             matches = [ { "device.name" = "~alsa_card.pci-0000_03_00.1"; } ];
             actions = { update-props = { "device.disabled" = true; }; };
           }
           {
-            # 2. Configure the Hardware Profile (The Device)
+            # Configure the Hardware Profile
             matches = [ { "device.name" = "~alsa_card.pci-0000_03_00.6"; } ];
             actions = {
               update-props = {
@@ -205,13 +205,13 @@ in
             };
           }
           {
-            # 3. Configure the Output Volume/Mute (The Node)
+            # Configure the Output Volume/Mute
             matches = [ { "node.name" = "~alsa_output.pci-0000_03_00.6.*"; } ];
             actions = {
               update-props = {
                 "node.description" = "Laptop Speakers";
                 "node.mute" = false;
-                "node.volume" = 0.6; # No quotes needed for numbers
+                "node.volume" = 0.6; 
               };
             };
           }
