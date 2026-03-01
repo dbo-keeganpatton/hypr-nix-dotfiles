@@ -18,6 +18,13 @@ in
 		./hardware-configuration.nix
 	];
 
+  # Bluetooth Config
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
+
 	# Bootloader Configs
 	boot.loader.systemd-boot.enable                 = true;
 	boot.loader.efi.canTouchEfiVariables            = true;
