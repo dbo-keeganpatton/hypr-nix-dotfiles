@@ -161,21 +161,82 @@ in
 		HYPRCURSOR_SIZE                     = "24";
 	};
 
-        # Sound
-        security.rtkit.enable           = true;
-        services.pulseaudio.enable      = false;
-        services.pipewire = {
-                enable                  = true;
-                alsa.enable             = true;
-                alsa.support32Bit       = true;
-                pulse.enable            = true;
-                wireplumber.enable      = true; 
-        };
-        xdg.portal = {
-                enable                  = true;
-		            extraPortals            = [pkgs.xdg-desktop-portal-gtk];
-	};
+  # Sound
+  security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
+  hardware.enableAllFirmware = true;
 
+  # This directory has to be manually made to save default
+  # for alsactl
+  systemd.tmpfiles.rules = [
+    "d /var/lib/alsa 0755 root root -"
+  ];
+
+  boot.extraModprobeConfig = ''
+    options snd_hda_intel index=0 model=auto
+    options snd_rn_pci_acp3x index=-2
+  '';
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    wireplumber = {
+      enable = true;
+      extraConfig."10-fix-ryzen-audio" = {
+        "monitor.alsa.rules" = [
+          {
+            # 1. Kill the HDMI card
+            matches = [ { "device.name" = "~alsa_card.pci-0000_03_00.1"; } ];
+            actions = { update-props = { "device.disabled" = true; }; };
+          }
+          {
+            # 2. Configure the Hardware Profile (The Device)
+            matches = [ { "device.name" = "~alsa_card.pci-0000_03_00.6"; } ];
+            actions = {
+              update-props = {
+                "api.alsa.use-acp" = true;
+                "device.profile-set" = "default.conf";
+                "device.profile" = "analog-stereo";
+                "api.acp.auto-profile" = false;
+                "api.acp.auto-port" = false;
+              };
+            };
+          }
+          {
+            # 3. Configure the Output Volume/Mute (The Node)
+            matches = [ { "node.name" = "~alsa_output.pci-0000_03_00.6.*"; } ];
+            actions = {
+              update-props = {
+                "node.description" = "Laptop Speakers";
+                "node.mute" = false;
+                "node.volume" = 0.6; # No quotes needed for numbers
+              };
+            };
+          }
+        ];
+      };
+    };
+  };
+
+  # This ensures ALSA settings are preserved across reboots
+  # Helps with Alsa/Pipewire defaulting to read from HDMI
+  systemd.services.alsa-store = {
+    description = "Store ALSA Subsystem State";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.coreutils}/bin/true";
+      ExecStop = "${pkgs.alsa-utils}/sbin/alsactl store";
+    };
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
 	# Fonts
 	fonts.packages                        = [ pkgs.nerd-fonts.jetbrains-mono ];

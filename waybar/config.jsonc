@@ -50,7 +50,7 @@
     
     "network": {
       "interface": "wlp1s0",
-      "interval": 1,
+      "interval": 60,
       "format": "{ipaddr}",
       "format-wifi": "  ({bandwidthTotalBytes})",
       "format-ethernet": "{ifname} ",
