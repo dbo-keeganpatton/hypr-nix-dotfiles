@@ -25,6 +25,12 @@ in
   };
   services.blueman.enable = true;
 
+  # Enable 32bit support for steam to work
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true; 
+  };
+
 	# Bootloader Configs
 	boot.loader.systemd-boot.enable                 = true;
 	boot.loader.efi.canTouchEfiVariables            = true;
