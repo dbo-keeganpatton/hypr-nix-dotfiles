@@ -125,6 +125,7 @@ in
 			gnumake                       # Build Automation for MAKE
 			ripgrep                       # System Search Tool
 			neovim                        # Text Editor
+      kalker                        # System Calculator
 			waybar                        # Desktop Navbar
 			lua5_1                        # Lua Runtime
 			nodejs                        # Node Package Manager
