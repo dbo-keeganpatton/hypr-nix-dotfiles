@@ -44,6 +44,10 @@
       "rev": "c8d29979cb0cb3a2437a8e0ae683fd82f340d3b8",
       "src": "https://github.com/karb94/neoscroll.nvim.git"
     },
+    "notes-dashboard.nvim": {
+      "rev": "eb92e11f71518adcd85b61d74f8b2f33e3070847",
+      "src": "https://github.com/crcrist/notes-dashboard.nvim.git"
+    },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs.git"

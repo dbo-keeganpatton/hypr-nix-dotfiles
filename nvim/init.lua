@@ -99,6 +99,9 @@ vim.pack.add({
   -->> TODO Comments
   {src = "https://github.com/folke/todo-comments.nvim.git"},
 
+  -->> Texas Tank Notetaking
+  {src = "https://github.com/crcrist/notes-dashboard.nvim.git"},
+
   -->> Neoscroll Buffer Scrolling Animation
   {src = "https://github.com/karb94/neoscroll.nvim.git"},
 
