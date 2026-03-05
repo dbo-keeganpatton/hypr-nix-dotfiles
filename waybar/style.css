@@ -1,78 +1,52 @@
-/* Total Background Styles - Intentionally Hidden */
 * {
-  color : white;
+    font-family: "Ubuntu Nerd Font", "Roboto", sans-serif;
+    font-size: 10px; 
+    border: none;
+    border-radius: 0;
+    min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.0);
+    background: rgba(0, 0, 0, 0.0);
+    color: #ffffff;
 }
 
-/* Section Specific Style */
+#clock,
+#network,
+#memory,
+#cpu,
+#battery,
 #workspaces {
-  background: rgba(0, 0, 0, 1.0);
-  border: 1px solid #66b2b2;
-  border-radius: 4px;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-right: 4px;
-  margin-left: 4px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #66b2b2;
+    border-radius: 2px;
+    padding: 0 4px;
+    margin: 6px 4px; 
+}
+
+#workspaces {
+    background: rgba(0, 0, 0, 1.0); 
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #ffffff;
 }
 
 #workspaces button label {
-  font-size: 24px;
+  font-size: 16px;
 }
 
-#workspaces button.active label {
-  font-size: 24px;
-  color: #66b2b2;
+#workspaces button.active {
+    color: #66b2b2;
 }
 
 #workspaces button:hover {
-    background: none;
-    border: none;
-}
-
-#clock {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #66b2b2;
-  border-radius: 4px;
-  padding: 0 10px;
-  margin-right: 4px;
-  margin-left: 4px;
-
-}
-
-#network {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #66b2b2;
-  border-radius: 4px;
-  margin-right: 4px;
-  margin-left: 4px;
-  padding: 0 10px;
-}
-
-#memory {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #66b2b2;
-  border-radius: 4px;
-  margin-right: 4px;
-  margin-left: 4px;
-  padding: 0 10px;
-}
-
-#cpu {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #66b2b2;
-  border-radius: 4px;
-  margin-right: 4px;
-  margin-left: 4px;
-  padding: 0 10px;
+    background: rgba(102, 178, 178, 0.2);
+    box-shadow: inherit;
+    text-shadow: inherit;
 }
 
 #battery {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #66b2b2;
-  border-radius: 4px;
-  margin-left: 4px;
-  padding: 0 10px;
+    margin-right: 0;
 }
