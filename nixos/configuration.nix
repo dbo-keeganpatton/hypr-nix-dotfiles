@@ -1,16 +1,30 @@
 { config, lib, pkgs, ... }:
 
-# Custom Vars
 let
 
+  # Custom SDDM login Screen with animated anime girl
   custom-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "hyprland_kath";
   };
 
+
+  # Latest Neovim Overlay for 0.12 support
   neovim-nightly-overlay = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
   });
 
+  # This block is to support a pop up window for my active keybinds
+  # as a helper tool using SUPER+i 
+  keybind-helper = pkgs.writeShellScriptBin "keybind-helper" ''
+    CONFIG_PATH="$HOME/.config/hypr/hyprland.conf"
+    grep '^bind =' "$CONFIG_PATH" | \
+        sed -e 's/\$mainMod/SUPER/g' \
+            -e 's/^bind[a-z]*\s*=\s*//g' \
+            -e 's/,/  +  /g' \
+            -e 's/,/  :  /g' | \
+        ${pkgs.rofi}/bin/rofi -dmenu -i -p "󱕰 Keybinds" 
+  '';
+  
 in
 
 {
@@ -105,6 +119,7 @@ in
 			python3Packages.pip           # Python Package Manager
 			custom-astronaut              # SDDM Login Screen
       phinger-cursors               # Custom Cursor
+      keybind-helper                # Custom function for keybind ref popup utility
 			wl-clipboard                  # Wayland Copy/Paste Utility
 			wf-recorder                   # Screen Recording Utility
 			wireplumber                   # Audio Utility
@@ -134,6 +149,7 @@ in
 			unzip                         # Extraction Utility
       rustc                         # Rust runtime
       cargo                         # Rust Package Manager
+      rofi                          # Wayland Window Switcher Utility
 			foot                          # Wayland Native Terminal Emulator
 			wofi                          # Menu GUI
 			btop                          # System Process Management
