@@ -140,6 +140,7 @@ in
 			gnumake                       # Build Automation for MAKE
 			ripgrep                       # System Search Tool
 			neovim                        # Text Editor
+      heroku                        # Deployment and Hosting Service CLI
       kalker                        # System Calculator
 			waybar                        # Desktop Navbar
 			lua5_1                        # Lua Runtime
