@@ -150,6 +150,7 @@ in
 			unzip                         # Extraction Utility
       rustc                         # Rust runtime
       cargo                         # Rust Package Manager
+      krita                         # Vector grapgic editor
       rofi                          # Wayland Window Switcher Utility
 			foot                          # Wayland Native Terminal Emulator
 			wofi                          # Menu GUI
