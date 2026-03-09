@@ -160,6 +160,7 @@ in
 			gcc                           # C Compiler
 			fzf                           # Command Line Fuzzy Finder
 			git                           # Version Control Tool
+      bun                           # Javascript runtime
 			fd                            # Alternative to Find Utility
 		];
 
