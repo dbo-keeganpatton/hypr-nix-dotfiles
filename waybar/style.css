@@ -21,7 +21,7 @@ window#waybar {
     border: 1px solid #66b2b2;
     border-radius: 9px;
     padding: 0 4px;
-    margin-left: 0px;
+    margin-left: 4px;
 }
 
 #workspaces {
@@ -49,4 +49,8 @@ window#waybar {
 
 #battery {
     margin-right: 0;
+}
+
+#clock {
+  margin-left: 0px;
 }
