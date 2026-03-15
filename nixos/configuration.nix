@@ -115,55 +115,55 @@ in
 	# System Packages
 	# https://search.nixos.org/ 
 	environment.systemPackages = with pkgs; [
-			python3Packages.pynvim        # Neovim Python Client 
-			python3Packages.pip           # Python Package Manager
-			custom-astronaut              # SDDM Login Screen
+      python3Packages.pynvim        # Neovim Python Client 
+      python3Packages.pip           # Python Package Manager
+      custom-astronaut              # SDDM Login Screen
       phinger-cursors               # Custom Cursor
       keybind-helper                # Custom function for keybind ref popup utility
-			wl-clipboard                  # Wayland Copy/Paste Utility
-			wf-recorder                   # Screen Recording Utility
-			wireplumber                   # Audio Utility
-			alsa-utils                    # Audio Utility
-			pavucontrol                   # Audio Control GUI
-			tree-sitter                   # Syntax Parser for Editor
-			fastfetch                     # System Info Tool
-			playerctl                     # Audio Utility
-			grimblast                     # Screenshots
-			hyprpaper                     # Wallpaper Utility
+      wl-clipboard                  # Wayland Copy/Paste Utility
+      wf-recorder                   # Screen Recording Utility
+      wireplumber                   # Audio Utility
+      alsa-utils                    # Audio Utility
+      pavucontrol                   # Audio Control GUI
+      tree-sitter                   # Syntax Parser for Editor
+      fastfetch                     # System Info Tool
+      playerctl                     # Audio Utility
+      grimblast                     # Screenshots
+      hyprpaper                     # Wallpaper Utility
       hyprlock                      # Screen Locking
       hypridle                      # System Idle Daemon 
-			waypaper                      # Wallpaper Manager
-			luarocks                      # Lua Package Manager
-			starship                      # Command Line Prompt Customizer
-			python3                       # Python Runtime
+      waypaper                      # Wallpaper Manager
+      luarocks                      # Lua Package Manager
+      starship                      # Command Line Prompt Customizer
+      python3                       # Python Runtime
       zathura                       # Terminal Based PDF Utility
-			gnumake                       # Build Automation for MAKE
-			ripgrep                       # System Search Tool
-			neovim                        # Text Editor
+      gnumake                       # Build Automation for MAKE
+      ripgrep                       # System Search Tool
+      neovim                        # Text Editor
       heroku                        # Deployment and Hosting Service CLI
       kalker                        # System Calculator
-			waybar                        # Desktop Navbar
-			lua5_1                        # Lua Runtime
-			nodejs                        # Node Package Manager
+      waybar                        # Desktop Navbar
+      lua5_1                        # Lua Runtime
+      nodejs                        # Node Package Manager
       steam                         # Video Games
-			slurp                         # Screenshot helper utility
-			unzip                         # Extraction Utility
+      slurp                         # Screenshot helper utility
+      unzip                         # Extraction Utility
       rustc                         # Rust runtime
       cargo                         # Rust Package Manager
       krita                         # Vector grapgic editor
       rofi                          # Wayland Window Switcher Utility
-			foot                          # Wayland Native Terminal Emulator
-			wofi                          # Menu GUI
-			btop                          # System Process Management
+      foot                          # Wayland Native Terminal Emulator
+      wofi                          # Menu GUI
+      btop                          # System Process Management
       yazi                          # Command Line File Manager
-			grim                          # Screenshot Utility
-			tmux                          # Terminal Multiplexer
-			wget                          # File downloader
-			gcc                           # C Compiler
-			fzf                           # Command Line Fuzzy Finder
-			git                           # Version Control Tool
+      grim                          # Screenshot Utility
+      tmux                          # Terminal Multiplexer
+      wget                          # File downloader
+      gcc                           # C Compiler
+      fzf                           # Command Line Fuzzy Finder
+      git                           # Version Control Tool
       bun                           # Javascript runtime
-			fd                            # Alternative to Find Utility
+      fd                            # Alternative to Find Utility
 		];
 
 	# Wayland Variables
