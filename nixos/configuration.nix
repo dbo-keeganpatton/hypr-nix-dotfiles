@@ -157,6 +157,7 @@ in
       krita                         # Vector grapgic editor
       rofi                          # Wayland Window Switcher Utility
       foot                          # Wayland Native Terminal Emulator
+      kitty                         # I shouldn't even have this shit here, literally just for pets.nvim
       wofi                          # Menu GUI
       btop                          # System Process Management
       yazi                          # Command Line File Manager
