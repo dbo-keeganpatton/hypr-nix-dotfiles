@@ -37,7 +37,11 @@ in
     enable = true;
     powerOnBoot = true;
   };
-  services.blueman.enable = true;
+  services.blueman.enable                         = true;
+
+
+  # FlatPak
+  services.flatpak.enable                         = true;
 
   # Enable 32bit support for steam to work
   hardware.graphics = {
@@ -164,6 +168,7 @@ in
       git                           # Version Control Tool
       bun                           # Javascript runtime
       fd                            # Alternative to Find Utility
+      jq                            # CLI JSON Processor
 		];
 
 	# Wayland Variables

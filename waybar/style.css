@@ -1,6 +1,6 @@
 * {
     font-family: "Ubuntu Nerd Font", "Roboto", sans-serif;
-    font-size: 10px; 
+    font-size: 14px; 
     border: none;
     border-radius: 0;
     min-height: 0;
@@ -20,7 +20,7 @@ window#waybar {
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid #66b2b2;
     border-radius: 9px;
-    padding: 0 4px;
+    padding: 0 10px;
     margin-left: 4px;
 }
 
