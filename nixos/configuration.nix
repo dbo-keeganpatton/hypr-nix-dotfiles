@@ -138,6 +138,14 @@ in
       hypridle                      # System Idle Daemon 
       waypaper                      # Wallpaper Manager
       luarocks                      # Lua Package Manager
+      
+      #->> These packages are for linux-casefolding fix
+      #->> to fix texture issues in Counter Strike Source
+      inotify-tools
+      libnotify
+      parallel
+      #->>
+
       starship                      # Command Line Prompt Customizer
       python3                       # Python Runtime
       zathura                       # Terminal Based PDF Utility
