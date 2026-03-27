@@ -163,6 +163,7 @@ in
       rustc                         # Rust runtime
       cargo                         # Rust Package Manager
       krita                         # Vector grapgic editor
+      nmap                          # Network Application
       rofi                          # Wayland Window Switcher Utility
       foot                          # Wayland Native Terminal Emulator
       kitty                         # I shouldn't even have this shit here, literally just for pets.nvim
